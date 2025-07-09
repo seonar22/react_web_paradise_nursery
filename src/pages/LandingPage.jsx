@@ -9,7 +9,7 @@ const LandingPage = () => {
         <h1>Welcome to Paradise Nursery</h1>
         <p>Your one-stop shop for beautiful and healthy houseplants.</p>
         <Link to="/products" className="shop-now-button">
-          Shop Now
+          Get Started
         </Link>
       </header>
       <section className="about-us">
