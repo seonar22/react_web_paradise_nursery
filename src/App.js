@@ -1,24 +1,30 @@
 import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import LandingPage from './pages/LandingPage';
+import ProductListingPage from './pages/ProductListingPage';
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
+import './App.css'; // General app styling
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CartProvider>
+        <Navbar />
+        <main className="container">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/products" element={<ProductListingPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            {/* Optional: Add a route for product details if needed, though not explicitly in scope for this setup */}
+            {/* <Route path="/products/:id" element={<ProductDetailPage />} /> */}
+          </Routes>
+        </main>
+      </CartProvider>
+    </Router>
   );
 }
 
