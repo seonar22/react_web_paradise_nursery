@@ -39,6 +39,14 @@ const plants = [
     imageUrl: '/images/snake_plant.jpg',
     section: 'Decorative Plants', // Added another section for variety
   },
+  {
+     id: 'p6', // New plant item
+     name: 'Spider Plant',
+     description: 'An easy-to-grow houseplant, famous for its arching leaves and small "spiderettes" that hang down.',
+     cost: 18.00,
+     imageUrl: '/images/spider_plant.jpg',
+     section: 'Foliage & Low Maintenance', // Category 4
+   },
 ];
 
 export default plants;
